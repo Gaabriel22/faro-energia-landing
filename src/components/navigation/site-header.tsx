@@ -2,20 +2,10 @@ import { ArrowUpRight } from "lucide-react"
 
 import { FaroLogo } from "@/components/brand/faro-logo"
 import { Container } from "@/components/layout/container"
-import {
-  MobileNavigation,
-  type NavigationItem,
-} from "@/components/navigation/mobile-navigation"
+import { MobileNavigation } from "@/components/navigation/mobile-navigation"
 import { buttonVariants } from "@/components/ui/button"
-import { faroLandingContent } from "@/content"
+import { faroBrand, faroLandingContent } from "@/content"
 import { cn } from "@/lib/utils"
-
-const navigationItems = [
-  { href: "#beneficios", label: "Benefícios" },
-  { href: "#como-funciona", label: "Como funciona" },
-  { href: "#projetos", label: "Projetos" },
-  { href: "#duvidas", label: "Dúvidas" },
-] as const satisfies readonly NavigationItem[]
 
 export function SiteHeader() {
   const cta = faroLandingContent.hero.primaryCta
@@ -36,7 +26,7 @@ export function SiteHeader() {
 
         <nav aria-label="Navegação principal" className="hidden lg:block">
           <ul className="flex items-center gap-1 lg:gap-3">
-            {navigationItems.map((item) => (
+            {faroBrand.navigation.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
@@ -60,7 +50,7 @@ export function SiteHeader() {
           <ArrowUpRight aria-hidden data-icon="inline-end" />
         </a>
 
-        <MobileNavigation items={navigationItems} cta={cta} />
+        <MobileNavigation items={faroBrand.navigation} cta={cta} />
       </Container>
     </header>
   )

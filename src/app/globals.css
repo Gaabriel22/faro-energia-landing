@@ -138,14 +138,27 @@
     background: var(--primitive-solar);
     color: var(--primitive-forest-deep);
   }
-
-  [id] {
-    scroll-margin-top: 6rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+@layer utilities {
+  .technical-grid {
+    background-image:
+      linear-gradient(
+        to right,
+        oklch(0.205 0.022 156 / 4%) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        oklch(0.205 0.022 156 / 4%) 1px,
+        transparent 1px
+      );
+    background-size: 2.5rem 2.5rem;
   }
 }

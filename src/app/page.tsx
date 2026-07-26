@@ -1,5 +1,9 @@
 import { SiteHeader } from "@/components/navigation/site-header"
+import { GuaranteesSection } from "@/components/sections/guarantees-section"
 import { HeroSection } from "@/components/sections/hero-section"
+import { ProblemBenefitsSection } from "@/components/sections/problem-benefits-section"
+import { ProcessSection } from "@/components/sections/process-section"
+import { TrustBand } from "@/components/sections/trust-band"
 
 export default function Home() {
   return (
@@ -13,6 +17,10 @@ export default function Home() {
       <SiteHeader />
       <main id="conteudo" tabIndex={-1} className="overflow-hidden">
         <HeroSection />
+        <TrustBand />
+        <ProblemBenefitsSection />
+        <ProcessSection />
+        <GuaranteesSection />
       </main>
     </>
   )

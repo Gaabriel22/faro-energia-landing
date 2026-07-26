@@ -70,3 +70,42 @@ test("moves keyboard users from the skip link to main content", async ({
   await skipLink.press("Enter")
   await expect(page.getByRole("main")).toBeFocused()
 })
+
+test("keeps anchored sections clear of the fixed header", async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto("/")
+
+  if (isMobile) {
+    await page.getByRole("button", { name: "Menu" }).click()
+    await page
+      .getByRole("navigation", { name: "Navegação móvel" })
+      .getByRole("link", { name: "Como funciona" })
+      .click()
+  } else {
+    await page
+      .getByRole("navigation", { name: "Navegação principal" })
+      .getByRole("link", { name: "Como funciona" })
+      .click()
+  }
+
+  const headerBottom = await page
+    .getByRole("banner")
+    .evaluate((element) => element.getBoundingClientRect().bottom)
+
+  await expect
+    .poll(() =>
+      page
+        .locator("#como-funciona")
+        .evaluate((element) => element.getBoundingClientRect().top),
+    )
+    .toBeGreaterThanOrEqual(headerBottom)
+  await expect
+    .poll(() =>
+      page
+        .locator("#como-funciona")
+        .evaluate((element) => element.getBoundingClientRect().top),
+    )
+    .toBeLessThan(headerBottom + 40)
+})
