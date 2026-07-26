@@ -152,6 +152,16 @@
   }
 }
 
+@media (orientation: landscape) and (height < 30rem) and (width < 64rem) {
+  body {
+    padding-bottom: 0;
+  }
+
+  .mobile-cta-safe-area {
+    display: none;
+  }
+}
+
 @layer utilities {
   .technical-grid {
     background-image:

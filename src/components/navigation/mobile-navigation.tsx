@@ -59,7 +59,7 @@ export function MobileNavigation({ items, cta }: MobileNavigationProps) {
       {isOpen ? (
         <div
           id="mobile-navigation"
-          className="motion-mobile-menu absolute inset-x-0 top-full border-t border-canvas/12 bg-forest-deep px-gutter pb-6 shadow-2xl"
+          className="motion-mobile-menu absolute inset-x-0 top-full max-h-[calc(100svh-4.75rem)] overflow-y-auto overscroll-contain border-t border-canvas/12 bg-forest-deep px-gutter pb-6 shadow-2xl"
         >
           <nav aria-label="Navegação móvel">
             <ul className="divide-y divide-canvas/12">

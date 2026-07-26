@@ -51,8 +51,8 @@
 - [x] 6.1 Implementar efeitos simples em CSS e comparar resultado/custo antes de decidir por Motion
 - [x] 6.2 Se justificado, instalar Motion, configurar carregamento mínimo e manter fallback completo sem animação
 - [x] 6.3 Respeitar `prefers-reduced-motion` em todas as transições e revelações
-- [ ] 6.4 Revisar layout entre 320 px e 2560 px, orientação paisagem e zoom de 200%
-- [ ] 6.5 Eliminar overflow horizontal, mudanças de layout e áreas de toque inadequadas
+- [x] 6.4 Revisar layout entre 320 px e 2560 px, orientação paisagem e zoom de 200%
+- [x] 6.5 Eliminar overflow horizontal, mudanças de layout e áreas de toque inadequadas
 
 ## 7. SEO e segurança
 
