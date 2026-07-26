@@ -48,7 +48,7 @@ export function HeroSection() {
             {hero.description}
           </p>
 
-          <div className="mt-8 flex flex-col items-stretch gap-3 min-[420px]:flex-row min-[420px]:items-center">
+          <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
             <a
               href={hero.primaryCta.href}
               className={cn(
