@@ -65,10 +65,10 @@
 
 ## 8. Inspeção e entrega
 
-- [ ] 8.1 Executar lint, typecheck, testes unitários/de componentes e build de produção
-- [ ] 8.2 Executar fluxo Playwright do CTA, simulador, FAQ e formulário em mobile e desktop
-- [ ] 8.3 Capturar screenshots Playwright da página inteira e dos estados interativos em mobile e desktop
-- [ ] 8.4 Inspecionar screenshots visualmente e corrigir composição, cortes, overflow, contraste e inconsistências
+- [x] 8.1 Executar lint, typecheck, testes unitários/de componentes e build de produção
+- [x] 8.2 Executar fluxo Playwright do CTA, simulador, FAQ e formulário em mobile e desktop
+- [x] 8.3 Capturar screenshots Playwright da página inteira e dos estados interativos em mobile e desktop
+- [x] 8.4 Inspecionar screenshots visualmente e corrigir composição, cortes, overflow, contraste e inconsistências
 - [ ] 8.5 Executar axe, Lighthouse CI e verificação dos headers contra build de produção
 - [ ] 8.6 Confirmar orçamento de JavaScript, asset visual, métricas Lighthouse e documentar INP como meta de campo futura
 - [ ] 8.7 Escrever README de portfólio com arquitetura, scripts, decisões, métricas e aviso explícito de conteúdo fictício

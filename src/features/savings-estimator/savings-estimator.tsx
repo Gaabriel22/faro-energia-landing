@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, type FormEvent } from "react"
-import { ArrowDownRight, ArrowUpRight, Calculator } from "lucide-react"
 
 import {
   calculateSavings,
@@ -17,6 +16,45 @@ const INITIAL_ESTIMATE = calculateSavings(2_500)
 
 type SavingsEstimatorProps = {
   disclaimer: string
+}
+
+function ArrowIcon({ down = false }: { down?: boolean }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="size-4"
+    >
+      {down ? (
+        <path d="m7 7 10 10M17 7v10H7" />
+      ) : (
+        <path d="M7 17 17 7M7 7h10v10" />
+      )}
+    </svg>
+  )
+}
+
+function CalculatorIcon() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="size-4"
+    >
+      <rect width="16" height="20" x="4" y="2" rx="2" />
+      <path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" />
+    </svg>
+  )
 }
 
 function validateInput(value: string) {
@@ -69,7 +107,7 @@ export function SavingsEstimator({ disclaimer }: SavingsEstimatorProps) {
     <div className="overflow-hidden border border-forest-deep/22 bg-solar text-forest-deep shadow-(--shadow-soft)">
       <div className="flex items-center justify-between gap-5 border-b border-forest-deep/22 px-5 py-4 sm:px-7">
         <p className="flex items-center gap-3 text-xs font-bold tracking-[0.16em] uppercase">
-          <Calculator aria-hidden className="size-4" />
+          <CalculatorIcon />
           Simulador Faro
         </p>
         <p className="text-xs font-semibold text-forest-deep/78">
@@ -134,7 +172,7 @@ export function SavingsEstimator({ disclaimer }: SavingsEstimatorProps) {
           className="motion-interactive inline-flex min-h-12 w-full items-center justify-between rounded-full bg-forest-deep px-6 text-sm font-bold text-canvas shadow-(--shadow-button) hover:bg-forest"
         >
           Calcular economia
-          <ArrowDownRight aria-hidden className="size-4" />
+          <ArrowIcon down />
         </button>
       </form>
 
@@ -173,7 +211,7 @@ export function SavingsEstimator({ disclaimer }: SavingsEstimatorProps) {
             className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-sm text-sm font-bold text-solar underline decoration-solar/40 underline-offset-5 hover:decoration-solar"
           >
             Solicitar avaliação técnica
-            <ArrowUpRight aria-hidden className="size-4" />
+            <ArrowIcon />
           </a>
         </div>
       </div>

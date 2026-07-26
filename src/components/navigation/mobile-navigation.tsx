@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { ArrowUpRight, Menu, X } from "lucide-react"
 
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -14,6 +13,43 @@ type NavigationItem = {
 type MobileNavigationProps = {
   items: readonly NavigationItem[]
   cta: NavigationItem
+}
+
+function NavArrowIcon() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="size-4"
+    >
+      <path d="M7 17 17 7M7 7h10v10" />
+    </svg>
+  )
+}
+
+function MenuIcon({ open }: { open: boolean }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      className="size-4"
+    >
+      {open ? (
+        <path d="m6 6 12 12M18 6 6 18" />
+      ) : (
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      )}
+    </svg>
+  )
 }
 
 export function MobileNavigation({ items, cta }: MobileNavigationProps) {
@@ -48,11 +84,7 @@ export function MobileNavigation({ items, cta }: MobileNavigationProps) {
         onClick={() => setIsOpen((current) => !current)}
         className="motion-interactive flex min-h-11 items-center gap-2 rounded-full border border-canvas/24 px-4 text-sm font-semibold text-canvas hover:border-solar hover:text-solar"
       >
-        {isOpen ? (
-          <X aria-hidden className="size-4" />
-        ) : (
-          <Menu aria-hidden className="size-4" />
-        )}
+        <MenuIcon open={isOpen} />
         Menu
       </button>
 
@@ -74,7 +106,9 @@ export function MobileNavigation({ items, cta }: MobileNavigationProps) {
                       0{index + 1}
                     </span>
                     <span className="flex-1">{item.label}</span>
-                    <ArrowUpRight aria-hidden className="size-4 text-solar" />
+                    <span className="text-solar">
+                      <NavArrowIcon />
+                    </span>
                   </a>
                 </li>
               ))}
@@ -88,7 +122,7 @@ export function MobileNavigation({ items, cta }: MobileNavigationProps) {
               )}
             >
               {cta.label}
-              <ArrowUpRight aria-hidden data-icon="inline-end" />
+              <NavArrowIcon />
             </a>
           </nav>
         </div>
