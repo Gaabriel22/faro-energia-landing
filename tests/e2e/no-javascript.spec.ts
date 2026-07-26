@@ -26,4 +26,11 @@ test("keeps essential content available without JavaScript", async ({
       name: "Equipamento protegido. Geração acompanhada.",
     }),
   ).toBeVisible()
+  await expect(
+    page.getByRole("heading", {
+      level: 2,
+      name: "Economia que aparece no caixa.",
+    }),
+  ).toBeVisible()
+  await expect(page.getByText("Marina Alves")).toBeVisible()
 })

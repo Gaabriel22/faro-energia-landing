@@ -85,6 +85,10 @@ export type FaroLandingContent = {
     description: string
     items: readonly Project[]
   }
+  testimonialsSection: {
+    eyebrow: string
+    title: string
+  }
   testimonials: readonly Testimonial[]
   guarantees: {
     eyebrow: string
@@ -235,6 +239,10 @@ export const faroLandingContent = {
           "Cobertura aproveitada sem reduzir vagas ou circulação de veículos.",
       },
     ],
+  },
+  testimonialsSection: {
+    eyebrow: "Na rotina de quem opera",
+    title: "Clareza antes, durante e depois.",
   },
   testimonials: [
     {

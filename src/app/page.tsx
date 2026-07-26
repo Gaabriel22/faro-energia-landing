@@ -3,6 +3,8 @@ import { GuaranteesSection } from "@/components/sections/guarantees-section"
 import { HeroSection } from "@/components/sections/hero-section"
 import { ProblemBenefitsSection } from "@/components/sections/problem-benefits-section"
 import { ProcessSection } from "@/components/sections/process-section"
+import { ProjectsSection } from "@/components/sections/projects-section"
+import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { TrustBand } from "@/components/sections/trust-band"
 
 export default function Home() {
@@ -20,6 +22,8 @@ export default function Home() {
         <TrustBand />
         <ProblemBenefitsSection />
         <ProcessSection />
+        <ProjectsSection />
+        <TestimonialsSection />
         <GuaranteesSection />
       </main>
     </>
