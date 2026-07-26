@@ -120,6 +120,8 @@
   html {
     @apply bg-background font-sans text-foreground;
     min-width: 20rem;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
     text-rendering: optimizeLegibility;
   }
 
@@ -135,5 +137,15 @@
   ::selection {
     background: var(--primitive-solar);
     color: var(--primitive-forest-deep);
+  }
+
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

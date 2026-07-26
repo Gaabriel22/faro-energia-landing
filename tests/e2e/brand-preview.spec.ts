@@ -1,6 +1,9 @@
 import { expect, test } from "./fixtures"
 
-test("captures the current brand foundation", async ({ page }, testInfo) => {
+test("captures the current brand foundation", async (
+  { page, isMobile },
+  testInfo,
+) => {
   await page.goto("/")
 
   await expect(
@@ -15,4 +18,12 @@ test("captures the current brand foundation", async ({ page }, testInfo) => {
     fullPage: true,
     animations: "disabled",
   })
+
+  if (isMobile) {
+    await page.getByRole("button", { name: "Menu" }).click()
+    await page.screenshot({
+      path: "artifacts/visual/mobile-navigation-open.png",
+      animations: "disabled",
+    })
+  }
 })
