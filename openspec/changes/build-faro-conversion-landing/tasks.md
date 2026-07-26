@@ -23,7 +23,7 @@
 - [x] 3.2 Definir tokens semânticos em OKLCH, escalas tipográficas, espaçamento, raios, sombras e estados de foco
 - [x] 3.3 Configurar fontes otimizadas com `next/font`, poucos pesos e fallbacks ajustados
 - [x] 3.4 Criar logo, ícones e motivo geométrico do raio solar em SVG acessível e enxuto
-- [ ] 3.5 Gerar, selecionar e otimizar assets visuais originais locais em AVIF/WebP com variantes responsivas
+- [x] 3.5 Gerar, selecionar e otimizar assets visuais originais locais em AVIF/WebP com variantes responsivas
 - [x] 3.6 Implementar primitivas de layout e seção reutilizáveis sem criar abstrações prematuras
 
 ## 4. Jornada de conversão

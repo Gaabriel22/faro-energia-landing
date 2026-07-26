@@ -1,4 +1,6 @@
 export { faroBrand } from "./brand"
 export { faroLandingContent } from "./landing"
+export { faroMedia } from "./media"
 export type { FaroBrand } from "./brand"
 export type { FaroLandingContent } from "./landing"
+export type { FaroImage } from "./media"
