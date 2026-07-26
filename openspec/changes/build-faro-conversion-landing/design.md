@@ -28,7 +28,7 @@ Os principais stakeholders são visitantes interessados em solicitar orçamento 
 
 ### 1. Base técnica enxuta e atual
 
-O projeto usará Next.js App Router, React, TypeScript, Tailwind CSS e npm. O scaffold será criado na raiz existente com `create-next-app`, preservando `openspec/`.
+O projeto usará Next.js App Router, React, TypeScript, Tailwind CSS e npm. O scaffold será criado na raiz existente com `create-next-app`, preservando `openspec/`. O pacote e o repositório usarão o nome `faro-energia-landing`.
 
 shadcn/ui fornecerá apenas primitivas úteis, como Button, Accordion, Dialog, Field e Input. Componentes de seção e identidade visual permanecerão no domínio da aplicação. Isso reduz reinvenção de comportamento acessível sem transformar a página em um catálogo genérico.
 
@@ -113,7 +113,7 @@ O LCP será texto ou imagem local otimizada com dimensões conhecidas. Fontes us
 
 O orçamento inicial será:
 
-- JavaScript cliente da rota principal <= 130 KB gzip.
+- JavaScript cliente da rota principal <= 130 KB transferidos na medição CDP definida abaixo.
 - Imagem responsável pelo LCP <= 180 KB.
 - Nenhuma dependência de terceiros bloqueante.
 - Zero mudanças de layout causadas por mídia, fontes ou animação.

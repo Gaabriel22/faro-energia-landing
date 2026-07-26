@@ -1,11 +1,11 @@
 ## 1. Scaffold e fundação
 
-- [ ] 1.1 Criar o projeto Next.js na raiz com App Router, TypeScript, Tailwind CSS, ESLint, `src/` e alias `@/*`, preservando `openspec/`
-- [ ] 1.2 Definir o pacote como `faro-revenue` e confirmar versões e requisitos de runtime
-- [ ] 1.3 Inicializar shadcn/ui e adicionar somente as primitivas necessárias
-- [ ] 1.4 Instalar Zod e justificar cada dependência de runtime
-- [ ] 1.5 Criar a estrutura `components/sections`, `features`, `content` e `lib` com fronteiras Server/Client explícitas
-- [ ] 1.6 Rodar lint e build do scaffold antes do primeiro checkpoint de commit
+- [x] 1.1 Criar o projeto Next.js na raiz com App Router, TypeScript, Tailwind CSS, ESLint, `src/` e alias `@/*`, preservando `openspec/`
+- [x] 1.2 Definir o pacote como `faro-energia-landing` e confirmar versões e requisitos de runtime
+- [x] 1.3 Inicializar shadcn/ui e adicionar somente as primitivas necessárias
+- [x] 1.4 Instalar Zod e justificar cada dependência de runtime
+- [x] 1.5 Criar a estrutura `components/sections`, `features`, `content` e `lib` com fronteiras Server/Client explícitas
+- [x] 1.6 Rodar lint e build do scaffold antes do primeiro checkpoint de commit
 
 ## 2. Qualidade e testes
 
