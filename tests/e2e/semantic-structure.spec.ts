@@ -53,7 +53,7 @@ test("keeps a coherent heading outline and distinguishable landmarks", async ({
   ).toHaveCount(1)
 })
 
-test("resolves implemented fragments and tracks only the deferred simulator", async ({
+test("resolves every internal fragment to an existing target", async ({
   page,
 }) => {
   const missingFragments = await page
@@ -70,8 +70,7 @@ test("resolves implemented fragments and tracks only the deferred simulator", as
         .sort(),
     )
 
-  // The simulator target is delivered by OpenSpec tasks 5.1–5.2.
-  expect(missingFragments).toEqual(["simulador"])
+  expect(missingFragments).toEqual([])
 })
 
 test("preserves DOM focus order without positive tabindex values", async ({

@@ -23,6 +23,20 @@ test("keeps essential content available without JavaScript", async ({
   await expect(
     page.getByRole("heading", {
       level: 2,
+      name: "Descubra quanto da conta pode voltar para o negócio.",
+    }),
+  ).toBeVisible()
+  await expect(
+    page.getByRole("textbox", {
+      name: "Qual é a média mensal da sua conta?",
+    }),
+  ).toBeVisible()
+  await expect(
+    page.getByRole("status", { name: "Resultado da estimativa" }),
+  ).toContainText("R$ 2.000")
+  await expect(
+    page.getByRole("heading", {
+      level: 2,
       name: "Equipamento protegido. Geração acompanhada.",
     }),
   ).toBeVisible()

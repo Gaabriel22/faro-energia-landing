@@ -13,6 +13,25 @@ test("captures the current brand foundation", async ({
     }),
   ).toBeVisible()
 
+  const estimator = page.locator("#simulador")
+  await estimator.screenshot({
+    path: `artifacts/visual/estimator-initial-${testInfo.project.name}.png`,
+    animations: "disabled",
+    style:
+      'body > header, a[href="#conteudo"], [data-testid="mobile-cta"] { visibility: hidden !important; }',
+  })
+  const billInput = estimator.getByRole("textbox", {
+    name: "Qual é a média mensal da sua conta?",
+  })
+  await billInput.fill("6.200")
+  await estimator.getByRole("button", { name: "Calcular economia" }).click()
+  await estimator.screenshot({
+    path: `artifacts/visual/estimator-result-${testInfo.project.name}.png`,
+    animations: "disabled",
+    style:
+      'body > header, a[href="#conteudo"], [data-testid="mobile-cta"] { visibility: hidden !important; }',
+  })
+
   for (const image of await page.locator("#projetos img").all()) {
     await image.scrollIntoViewIfNeeded()
     await image.evaluate((element: HTMLImageElement) => element.decode())

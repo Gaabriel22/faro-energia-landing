@@ -8,6 +8,7 @@ import { HeroSection } from "@/components/sections/hero-section"
 import { ProblemBenefitsSection } from "@/components/sections/problem-benefits-section"
 import { ProcessSection } from "@/components/sections/process-section"
 import { ProjectsSection } from "@/components/sections/projects-section"
+import { SavingsEstimatorSection } from "@/components/sections/savings-estimator-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { TrustBand } from "@/components/sections/trust-band"
 
@@ -25,6 +26,7 @@ export default function Home() {
         <HeroSection />
         <TrustBand />
         <ProblemBenefitsSection />
+        <SavingsEstimatorSection />
         <ProcessSection />
         <ProjectsSection />
         <TestimonialsSection />

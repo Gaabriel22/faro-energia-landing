@@ -38,8 +38,8 @@
 
 ## 5. Simulador e captura demonstrativa
 
-- [ ] 5.1 Implementar e testar fórmula de economia de 80%, faixa de R$ 300–100.000 e arredondamento
-- [ ] 5.2 Construir simulador acessível sem gráficos e conectar resultado ao CTA de orçamento
+- [x] 5.1 Implementar e testar fórmula de economia de 80%, faixa de R$ 300–100.000 e arredondamento
+- [x] 5.2 Construir simulador acessível sem gráficos e conectar resultado ao CTA de orçamento
 - [ ] 5.3 Criar schema Zod compartilhado com campos, enums, normalização e limites definidos no design
 - [ ] 5.4 Implementar Server Action demonstrativa sem persistência, transmissão ou log de PII
 - [ ] 5.5 Adicionar honeypot, rejeição segura e mensagens genéricas de erro
