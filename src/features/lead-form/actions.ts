@@ -1,14 +1,11 @@
 "use server"
 
+import { type LeadFormField } from "@/features/lead-form/schema"
+import type { LeadFormState } from "@/features/lead-form/state"
 import {
-  leadFormSchema,
-  type LeadFormField,
-  type LeadFormVisibleField,
-} from "@/features/lead-form/schema"
-import type {
-  LeadFormFieldErrors,
-  LeadFormState,
-} from "@/features/lead-form/state"
+  toVisibleFieldErrors,
+  validateLeadForm,
+} from "@/features/lead-form/validation"
 
 const EXPECTED_FIELDS = [
   "name",
@@ -37,35 +34,6 @@ function hasUnexpectedEntries(formData: FormData) {
   return EXPECTED_FIELDS.some((field) => formData.getAll(field).length > 1)
 }
 
-function readExpectedFields(formData: FormData) {
-  return {
-    name: formData.get("name") ?? "",
-    email: formData.get("email") ?? "",
-    phone: formData.get("phone") ?? "",
-    company: formData.get("company") ?? "",
-    monthlyBillRange: formData.get("monthlyBillRange") ?? "",
-    website: formData.get("website") ?? "",
-  }
-}
-
-function toVisibleFieldErrors(
-  fieldErrors: Record<string, string[] | undefined>,
-): LeadFormFieldErrors {
-  const visibleFields: readonly LeadFormVisibleField[] = [
-    "name",
-    "email",
-    "phone",
-    "company",
-    "monthlyBillRange",
-  ]
-
-  return Object.fromEntries(
-    visibleFields.flatMap((field) =>
-      fieldErrors[field]?.length ? [[field, fieldErrors[field]]] : [],
-    ),
-  ) as LeadFormFieldErrors
-}
-
 export async function submitLead(
   _previousState: LeadFormState,
   formData: FormData,
@@ -74,7 +42,7 @@ export async function submitLead(
     return genericErrorState
   }
 
-  const result = leadFormSchema.safeParse(readExpectedFields(formData))
+  const result = validateLeadForm(formData)
 
   if (!result.success) {
     const flattened = result.error.flatten()

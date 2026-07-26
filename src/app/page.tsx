@@ -5,6 +5,7 @@ import { FaqSection } from "@/components/sections/faq-section"
 import { FinalCtaSection } from "@/components/sections/final-cta-section"
 import { GuaranteesSection } from "@/components/sections/guarantees-section"
 import { HeroSection } from "@/components/sections/hero-section"
+import { LeadFormSection } from "@/components/sections/lead-form-section"
 import { ProblemBenefitsSection } from "@/components/sections/problem-benefits-section"
 import { ProcessSection } from "@/components/sections/process-section"
 import { ProjectsSection } from "@/components/sections/projects-section"
@@ -32,6 +33,7 @@ export default function Home() {
         <TestimonialsSection />
         <GuaranteesSection />
         <FaqSection />
+        <LeadFormSection />
         <FinalCtaSection />
       </main>
       <SiteFooter />

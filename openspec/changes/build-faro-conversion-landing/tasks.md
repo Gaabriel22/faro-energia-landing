@@ -43,8 +43,8 @@
 - [x] 5.3 Criar schema Zod compartilhado com campos, enums, normalização e limites definidos no design
 - [x] 5.4 Implementar Server Action demonstrativa sem persistência, transmissão ou log de PII
 - [x] 5.5 Adicionar honeypot, rejeição segura e mensagens genéricas de erro
-- [ ] 5.6 Implementar formulário com labels, autocomplete, erros associados, estado ocupado e anúncio de resultado
-- [ ] 5.7 Cobrir cálculo, validação, honeypot e estados do formulário com testes
+- [x] 5.6 Implementar formulário com labels, autocomplete, erros associados, estado ocupado e anúncio de resultado
+- [x] 5.7 Cobrir cálculo, validação, honeypot e estados do formulário com testes
 
 ## 6. Movimento, responsividade e refinamento
 

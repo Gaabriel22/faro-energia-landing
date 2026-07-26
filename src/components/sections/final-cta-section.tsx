@@ -11,7 +11,6 @@ export function FinalCtaSection() {
 
   return (
     <section
-      id="orcamento"
       aria-labelledby="final-cta-title"
       className="relative isolate overflow-hidden bg-forest-deep py-section text-canvas"
     >
