@@ -19,12 +19,12 @@
 
 ## 3. Marca, conteúdo e sistema visual
 
-- [ ] 3.1 Criar conteúdo tipado da Faro Energia com proposta, benefícios, projetos, depoimentos, garantias e FAQ coerentes
-- [ ] 3.2 Definir tokens semânticos em OKLCH, escalas tipográficas, espaçamento, raios, sombras e estados de foco
-- [ ] 3.3 Configurar fontes otimizadas com `next/font`, poucos pesos e fallbacks ajustados
-- [ ] 3.4 Criar logo, ícones e motivo geométrico do raio solar em SVG acessível e enxuto
+- [x] 3.1 Criar conteúdo tipado da Faro Energia com proposta, benefícios, projetos, depoimentos, garantias e FAQ coerentes
+- [x] 3.2 Definir tokens semânticos em OKLCH, escalas tipográficas, espaçamento, raios, sombras e estados de foco
+- [x] 3.3 Configurar fontes otimizadas com `next/font`, poucos pesos e fallbacks ajustados
+- [x] 3.4 Criar logo, ícones e motivo geométrico do raio solar em SVG acessível e enxuto
 - [ ] 3.5 Gerar, selecionar e otimizar assets visuais originais locais em AVIF/WebP com variantes responsivas
-- [ ] 3.6 Implementar primitivas de layout e seção reutilizáveis sem criar abstrações prematuras
+- [x] 3.6 Implementar primitivas de layout e seção reutilizáveis sem criar abstrações prematuras
 
 ## 4. Jornada de conversão
 

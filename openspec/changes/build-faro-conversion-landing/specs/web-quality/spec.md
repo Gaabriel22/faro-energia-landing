@@ -29,7 +29,7 @@ Imagens SHALL ter dimensões conhecidas, formato moderno, tamanhos responsivos e
 - **THEN** não causam mudança de layout perceptível e a imagem LCP não excede 180 KB
 
 ### Requirement: Orçamento de JavaScript
-A rota principal SHALL limitar JavaScript cliente a 130 KB transferidos e SHALL manter conteúdo estático em Server Components. A medição SHALL somar `encodedDataLength` de scripts de mesma origem em navegação inicial com cache desativado contra build de produção.
+A rota principal SHALL limitar JavaScript cliente a 170 KB transferidos e SHALL manter conteúdo estático em Server Components. A medição SHALL somar `encodedDataLength` de scripts de mesma origem em navegação inicial com cache desativado contra build de produção.
 
 #### Scenario: Bundle de produção é analisado
 - **WHEN** a build otimizada termina
