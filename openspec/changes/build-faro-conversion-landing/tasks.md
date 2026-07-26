@@ -56,9 +56,9 @@
 
 ## 7. SEO e segurança
 
-- [ ] 7.1 Gerar e implementar favicon, metadata, canonical via `SITE_URL`, Open Graph, Twitter card, robots e sitemap
-- [ ] 7.2 Gerar imagem social original local otimizada e validar preview compartilhável
-- [ ] 7.3 Implementar JSON-LD seguro para WebSite, Organization, Service e FAQ compatível com conteúdo visível
+- [x] 7.1 Gerar e implementar favicon, metadata, canonical via `SITE_URL`, Open Graph, Twitter card, robots e sitemap
+- [x] 7.2 Gerar imagem social original local otimizada e validar preview compartilhável
+- [x] 7.3 Implementar JSON-LD seguro para WebSite, Organization, Service e FAQ compatível com conteúdo visível
 - [ ] 7.4 Configurar CSP, `X-Content-Type-Options`, proteção de framing, `Referrer-Policy` e `Permissions-Policy`
 - [ ] 7.5 Verificar ausência de segredos, PII em logs, HTML inseguro e origens desnecessárias
 - [ ] 7.6 Executar auditoria de dependências e corrigir vulnerabilidades aplicáveis

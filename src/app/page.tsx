@@ -12,10 +12,13 @@ import { ProjectsSection } from "@/components/sections/projects-section"
 import { SavingsEstimatorSection } from "@/components/sections/savings-estimator-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { TrustBand } from "@/components/sections/trust-band"
+import { createFaroJsonLd } from "@/lib/faro-json-ld"
+import { JsonLd } from "@/lib/json-ld"
 
 export default function Home() {
   return (
     <>
+      <JsonLd id="faro-structured-data" data={createFaroJsonLd()} />
       <a
         href="#conteudo"
         className="fixed top-3 left-3 z-100 -translate-y-24 rounded-full bg-solar px-5 py-3 font-semibold text-forest-deep shadow-lg focus:translate-y-0"
