@@ -1,4 +1,8 @@
+import { SiteFooter } from "@/components/layout/site-footer"
+import { MobileCta } from "@/components/navigation/mobile-cta"
 import { SiteHeader } from "@/components/navigation/site-header"
+import { FaqSection } from "@/components/sections/faq-section"
+import { FinalCtaSection } from "@/components/sections/final-cta-section"
 import { GuaranteesSection } from "@/components/sections/guarantees-section"
 import { HeroSection } from "@/components/sections/hero-section"
 import { ProblemBenefitsSection } from "@/components/sections/problem-benefits-section"
@@ -25,7 +29,11 @@ export default function Home() {
         <ProjectsSection />
         <TestimonialsSection />
         <GuaranteesSection />
+        <FaqSection />
+        <FinalCtaSection />
       </main>
+      <SiteFooter />
+      <MobileCta />
     </>
   )
 }

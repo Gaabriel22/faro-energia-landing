@@ -33,4 +33,22 @@ test("keeps essential content available without JavaScript", async ({
     }),
   ).toBeVisible()
   await expect(page.getByText("Marina Alves")).toBeVisible()
+  await expect(
+    page.getByRole("heading", {
+      level: 2,
+      name: "O que todo negócio deveria perguntar.",
+    }),
+  ).toBeVisible()
+  await expect(
+    page.getByText(/Pode chegar, mas varia com consumo/),
+  ).toBeVisible()
+  await expect(
+    page.getByRole("heading", {
+      level: 2,
+      name: "Veja se a energia solar fecha para o seu negócio.",
+    }),
+  ).toBeVisible()
+  await expect(
+    page.getByRole("link", { name: "ola@faroenergia.com.br" }),
+  ).toBeVisible()
 })

@@ -36,6 +36,18 @@ test("captures the current brand foundation", async ({
     style:
       'body > header, a[href="#conteudo"] { visibility: hidden !important; }',
   })
+  await page.locator("#duvidas").screenshot({
+    path: `artifacts/visual/faq-${testInfo.project.name}.png`,
+    animations: "disabled",
+    style:
+      'body > header, a[href="#conteudo"], [data-testid="mobile-cta"] { visibility: hidden !important; }',
+  })
+  await page.getByRole("contentinfo").screenshot({
+    path: `artifacts/visual/footer-${testInfo.project.name}.png`,
+    animations: "disabled",
+    style:
+      'body > header, a[href="#conteudo"], [data-testid="mobile-cta"] { visibility: hidden !important; }',
+  })
   await page.evaluate(() => window.scrollTo(0, 0))
 
   await page.screenshot({

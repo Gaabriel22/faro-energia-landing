@@ -106,6 +106,14 @@ export type FaroLandingContent = {
     description: string
     action: LinkContent
   }
+  footer: {
+    description: string
+    contactLabel: string
+    email: string
+    availability: string
+    navigationLabel: string
+    legal: string
+  }
 }
 
 export const faroLandingContent = {
@@ -345,5 +353,14 @@ export const faroLandingContent = {
       href: "#simulador",
       label: "Simular minha economia",
     },
+  },
+  footer: {
+    description:
+      "Engenharia solar para transformar custo fixo em energia própria e previsibilidade.",
+    contactLabel: "Fale com a engenharia",
+    email: "ola@faroenergia.com.br",
+    availability: "Segunda a sexta, das 8h às 18h",
+    navigationLabel: "Explore a Faro",
+    legal: "© 2026 Faro Energia. Energia própria. Negócio mais leve.",
   },
 } as const satisfies FaroLandingContent

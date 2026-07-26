@@ -33,7 +33,7 @@
 - [x] 4.3 Implementar faixa de confiança, problema e benefícios econômicos
 - [x] 4.4 Implementar processo de contratação e seção de garantias
 - [x] 4.5 Implementar projetos e depoimentos fictícios com mídia responsiva
-- [ ] 4.6 Implementar FAQ, CTA final, rodapé e CTA móvel sem cobrir conteúdo
+- [x] 4.6 Implementar FAQ, CTA final, rodapé e CTA móvel sem cobrir conteúdo
 - [ ] 4.7 Verificar hierarquia de títulos, landmarks, links e ordem de foco
 
 ## 5. Simulador e captura demonstrativa

@@ -140,6 +140,16 @@
   }
 }
 
+@media (width < 64rem) {
+  body {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+  }
+
+  .mobile-cta-safe-area {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
