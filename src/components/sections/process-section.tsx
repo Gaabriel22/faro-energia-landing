@@ -34,7 +34,7 @@ export function ProcessSection() {
             href={hero.primaryCta.href}
             className={cn(
               buttonVariants({ size: "lg" }),
-              "mt-8 bg-solar text-forest-deep hover:bg-solar-soft",
+              "motion-interactive mt-8 bg-solar text-forest-deep hover:bg-solar-soft",
             )}
           >
             {hero.primaryCta.label}

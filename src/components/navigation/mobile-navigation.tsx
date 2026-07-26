@@ -46,7 +46,7 @@ export function MobileNavigation({ items, cta }: MobileNavigationProps) {
         aria-expanded={isOpen}
         aria-controls="mobile-navigation"
         onClick={() => setIsOpen((current) => !current)}
-        className="flex min-h-11 items-center gap-2 rounded-full border border-canvas/24 px-4 text-sm font-semibold text-canvas hover:border-solar hover:text-solar"
+        className="motion-interactive flex min-h-11 items-center gap-2 rounded-full border border-canvas/24 px-4 text-sm font-semibold text-canvas hover:border-solar hover:text-solar"
       >
         {isOpen ? (
           <X aria-hidden className="size-4" />
@@ -59,7 +59,7 @@ export function MobileNavigation({ items, cta }: MobileNavigationProps) {
       {isOpen ? (
         <div
           id="mobile-navigation"
-          className="absolute inset-x-0 top-full border-t border-canvas/12 bg-forest-deep px-gutter pb-6 shadow-2xl"
+          className="motion-mobile-menu absolute inset-x-0 top-full border-t border-canvas/12 bg-forest-deep px-gutter pb-6 shadow-2xl"
         >
           <nav aria-label="Navegação móvel">
             <ul className="divide-y divide-canvas/12">
@@ -84,7 +84,7 @@ export function MobileNavigation({ items, cta }: MobileNavigationProps) {
               onClick={closeMenu}
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "mt-5 w-full bg-solar text-forest-deep hover:bg-solar-soft",
+                "motion-interactive mt-5 w-full bg-solar text-forest-deep hover:bg-solar-soft",
               )}
             >
               {cta.label}

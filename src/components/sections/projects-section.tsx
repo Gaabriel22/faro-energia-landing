@@ -31,7 +31,7 @@ function ProjectImage({ image, sizes }: { image: FaroImage; sizes: string }) {
         fill
         unoptimized
         sizes={sizes}
-        className="object-cover"
+        className="motion-project-image object-cover"
       />
     </picture>
   )
@@ -80,7 +80,7 @@ export function ProjectsSection() {
               <li
                 key={project.id}
                 className={cn(
-                  "bg-paper",
+                  "motion-project bg-paper",
                   index === 0 && "lg:col-span-7",
                   index === 1 && "lg:col-span-5",
                   isWide && "lg:col-span-12",

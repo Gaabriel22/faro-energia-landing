@@ -87,6 +87,8 @@ Todo conteúdo permanecerá disponível sem animação. `prefers-reduced-motion`
 
 Alternativa considerada: animações somente em CSS. Continua válida para efeitos simples e terá preferência quando produzir o mesmo resultado com menor custo.
 
+**Resultado da avaliação:** a versão CSS cobre a assinatura de entrada do raio solar, assentamento do hero, feedback do simulador e formulário, abertura de FAQ/menu e microinterações de CTA e projetos usando apenas `transform`, `opacity` e `clip-path`. O gate de JavaScript da rota permanece dentro de 170 KB sem nova dependência de runtime. Motion não se justifica nesta versão e não será instalado; `prefers-reduced-motion` reduz animações e transições a duração praticamente instantânea e remove transformações de hover não essenciais.
+
 ### 6. Lead demonstrativo com minimização de dados
 
 O formulário pedirá nome obrigatório (2–80 caracteres após trim), e-mail obrigatório (3–254 caracteres, trim e lowercase), telefone opcional (10 ou 11 dígitos após remover pontuação), empresa obrigatória (2–100 caracteres após trim) e faixa de conta mensal obrigatória (`300-999`, `1000-2999`, `3000-9999`, `10000-29999` ou `30000+`). Um schema Zod único aplicará essas regras no cliente e no servidor. O honeypot `website` deverá permanecer vazio e não receberá autocomplete nem foco.

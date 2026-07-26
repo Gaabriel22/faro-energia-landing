@@ -30,7 +30,7 @@ export function SiteHeader() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="inline-flex min-h-11 items-center rounded-full px-3 text-sm font-semibold text-canvas/76 hover:text-solar lg:px-4"
+                  className="inline-flex min-h-11 items-center rounded-full px-3 text-sm font-semibold text-canvas/76 transition-colors hover:text-solar lg:px-4"
                 >
                   {item.label}
                 </a>
@@ -43,7 +43,7 @@ export function SiteHeader() {
           href={cta.href}
           className={cn(
             buttonVariants(),
-            "hidden bg-solar text-forest-deep hover:bg-solar-soft lg:inline-flex",
+            "motion-interactive hidden bg-solar text-forest-deep hover:bg-solar-soft lg:inline-flex",
           )}
         >
           {cta.label}

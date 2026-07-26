@@ -25,13 +25,13 @@ export function HeroSection() {
       aria-labelledby="hero-title"
       className="relative isolate min-h-svh overflow-hidden bg-forest text-canvas"
     >
-      <SolarRay className="absolute -right-140 -top-32 z-10 h-176 w-176 rotate-6 text-solar opacity-60 sm:-right-112 sm:h-208 sm:w-208 lg:right-16 lg:-top-36 lg:h-248 lg:w-248 lg:opacity-70" />
+      <SolarRay className="motion-hero-ray absolute -right-140 -top-32 z-10 h-176 w-176 rotate-6 text-solar opacity-60 sm:-right-112 sm:h-208 sm:w-208 lg:right-16 lg:-top-36 lg:h-248 lg:w-248 lg:opacity-70" />
 
       <Container
         size="wide"
         className="relative grid min-h-svh grid-cols-1 pt-31 lg:grid-cols-12 lg:pt-19"
       >
-        <div className="relative z-20 flex flex-col justify-center pb-12 lg:col-span-7 lg:py-20 lg:pr-12 xl:col-span-6">
+        <div className="motion-hero-copy relative z-20 flex flex-col justify-center pb-12 lg:col-span-7 lg:py-20 lg:pr-12 xl:col-span-6">
           <p className="mb-5 flex items-center gap-3 text-[0.68rem] font-bold tracking-[0.2em] text-solar uppercase sm:text-xs">
             <span aria-hidden className="h-px w-9 bg-solar" />
             {hero.eyebrow}
@@ -53,7 +53,7 @@ export function HeroSection() {
               href={hero.primaryCta.href}
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "min-h-13 bg-solar px-7 text-forest-deep hover:bg-solar-soft",
+                "motion-interactive min-h-13 bg-solar px-7 text-forest-deep hover:bg-solar-soft",
               )}
             >
               {hero.primaryCta.label}
@@ -63,7 +63,7 @@ export function HeroSection() {
               href={hero.secondaryCta.href}
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "min-h-13 border-canvas/35 text-canvas hover:border-canvas hover:bg-canvas hover:text-forest-deep",
+                "motion-interactive min-h-13 border-canvas/35 text-canvas hover:border-canvas hover:bg-canvas hover:text-forest-deep",
               )}
             >
               {hero.secondaryCta.label}
@@ -110,10 +110,10 @@ export function HeroSection() {
               priority
               unoptimized
               sizes="(max-width: 1023px) 100vw, 50vw"
-              className="object-cover object-[58%_center] lg:object-center"
+              className="motion-hero-image object-cover object-[58%_center] lg:object-center"
             />
           </picture>
-          <div className="absolute right-gutter bottom-6 z-20 max-w-52 border-l border-solar bg-forest-deep/82 px-4 py-3 text-xs leading-relaxed text-canvas backdrop-blur-sm lg:right-6 lg:bottom-8">
+          <div className="motion-hero-caption absolute right-gutter bottom-6 z-20 max-w-52 border-l border-solar bg-forest-deep/82 px-4 py-3 text-xs leading-relaxed text-canvas backdrop-blur-sm lg:right-6 lg:bottom-8">
             Projeto dimensionado para consumo, cobertura e rotina do negócio.
           </div>
         </div>

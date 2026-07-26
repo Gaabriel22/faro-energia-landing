@@ -51,12 +51,15 @@ export function FaqSection() {
                   <span className="flex-1 font-heading text-[clamp(1.45rem,3vw,2rem)] leading-tight tracking-[-0.02em]">
                     {item.question}
                   </span>
-                  <span className="grid size-10 shrink-0 place-items-center rounded-full border border-ink/25 text-forest group-open:bg-forest group-open:text-canvas">
-                    <Plus aria-hidden className="size-4 group-open:rotate-45" />
+                  <span className="grid size-10 shrink-0 place-items-center rounded-full border border-ink/25 text-forest transition-colors group-open:bg-forest group-open:text-canvas">
+                    <Plus
+                      aria-hidden
+                      className="size-4 transition-transform duration-200 group-open:rotate-45"
+                    />
                   </span>
                 </h3>
               </summary>
-              <p className="max-w-[62ch] pr-12 pb-8 pl-10 text-base leading-relaxed text-ink/68 sm:pl-12">
+              <p className="motion-faq-answer max-w-[62ch] pr-12 pb-8 pl-10 text-base leading-relaxed text-ink/68 sm:pl-12">
                 {item.answer}
               </p>
             </details>

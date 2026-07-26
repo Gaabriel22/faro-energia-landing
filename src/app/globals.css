@@ -102,6 +102,8 @@
   --shadow-soft: 0 24px 70px -42px oklch(0.205 0.022 156 / 45%);
   --shadow-button: 0 10px 26px -16px oklch(0.225 0.045 157 / 70%);
   --focus-width: 3px;
+  --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-press: cubic-bezier(0.25, 1, 0.5, 1);
   --sidebar: var(--primitive-paper);
   --sidebar-foreground: var(--primitive-ink);
   --sidebar-primary: var(--primitive-forest);
@@ -150,12 +152,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
 @layer utilities {
   .technical-grid {
     background-image:
@@ -170,5 +166,132 @@
         transparent 1px
       );
     background-size: 2.5rem 2.5rem;
+  }
+}
+
+@keyframes faro-ray-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.18;
+  }
+  to {
+    clip-path: inset(0);
+    opacity: var(--motion-ray-opacity);
+  }
+}
+
+@keyframes faro-settle {
+  from {
+    transform: translate3d(0, 1rem, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes faro-image-settle {
+  from {
+    transform: scale(1.025);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes faro-feedback-in {
+  from {
+    opacity: 0.4;
+    transform: translate3d(0, 0.4rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.motion-hero-ray {
+  --motion-ray-opacity: 0.6;
+  animation: faro-ray-reveal 780ms var(--motion-ease-out) 80ms both;
+}
+
+@media (width >= 64rem) {
+  .motion-hero-ray {
+    --motion-ray-opacity: 0.7;
+  }
+}
+
+.motion-hero-copy {
+  animation: faro-settle 680ms var(--motion-ease-out) 120ms both;
+}
+
+.motion-hero-image {
+  animation: faro-image-settle 900ms var(--motion-ease-out) both;
+}
+
+.motion-hero-caption {
+  animation: faro-settle 620ms var(--motion-ease-out) 260ms both;
+}
+
+.motion-feedback {
+  animation: faro-feedback-in 260ms var(--motion-ease-out) both;
+}
+
+.motion-dropdown-panel,
+.motion-mobile-menu {
+  transform-origin: top center;
+}
+
+details[open] > .motion-dropdown-panel,
+.motion-mobile-menu {
+  animation: faro-feedback-in 220ms var(--motion-ease-out) both;
+}
+
+details[open] .motion-faq-answer {
+  animation: faro-feedback-in 280ms var(--motion-ease-out) both;
+}
+
+.motion-interactive {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms var(--motion-ease-press);
+}
+
+.motion-project-image {
+  transition: transform 620ms var(--motion-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .motion-interactive:hover {
+    transform: translate3d(0, -0.125rem, 0);
+  }
+
+  .motion-project:hover .motion-project-image {
+    transform: scale(1.025);
+  }
+}
+
+.motion-interactive:active {
+  transform: scale(0.985);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .motion-interactive:hover,
+  .motion-interactive:active,
+  .motion-project:hover .motion-project-image {
+    transform: none !important;
   }
 }

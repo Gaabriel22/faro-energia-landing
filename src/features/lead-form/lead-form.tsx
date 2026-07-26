@@ -237,7 +237,7 @@ export function LeadForm({ action }: LeadFormProps) {
                 className="size-2.5 rotate-45 border-r border-b border-current transition-transform group-open/bill-select:-rotate-135"
               />
             </summary>
-            <div className="absolute top-[calc(100%+0.375rem)] left-0 z-30 w-full rounded-xl border border-ink/15 bg-paper p-1.5 text-ink shadow-(--shadow-card)">
+            <div className="motion-dropdown-panel absolute top-[calc(100%+0.375rem)] left-0 z-30 w-full rounded-xl border border-ink/15 bg-paper p-1.5 text-ink shadow-(--shadow-card)">
               {monthlyBillOptions.map((option) => (
                 <label
                   key={option.value}
@@ -282,7 +282,7 @@ export function LeadForm({ action }: LeadFormProps) {
 
       {state.message ? (
         <div
-          className={`mt-6 rounded-lg border px-4 py-3 text-sm leading-relaxed ${
+          className={`motion-feedback mt-6 rounded-lg border px-4 py-3 text-sm leading-relaxed ${
             state.status === "success"
               ? "border-forest/25 bg-forest/8 text-forest-deep"
               : "border-destructive/25 bg-destructive/6 text-destructive"
@@ -309,7 +309,7 @@ export function LeadForm({ action }: LeadFormProps) {
         type="submit"
         disabled={isBusy}
         aria-disabled={isBusy}
-        className="mt-7 inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-full bg-forest-deep px-6 text-base font-semibold text-canvas shadow-(--shadow-button) transition-colors hover:bg-forest focus-visible:ring-3 focus-visible:ring-forest/35 disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
+        className="motion-interactive mt-7 inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-full bg-forest-deep px-6 text-base font-semibold text-canvas shadow-(--shadow-button) hover:bg-forest focus-visible:ring-3 focus-visible:ring-forest/35 disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
       >
         {isBusy ? "Enviando solicitação…" : "Solicitar avaliação técnica"}
         <span aria-hidden>↗</span>

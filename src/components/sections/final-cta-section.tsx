@@ -41,7 +41,7 @@ export function FinalCtaSection() {
             href={finalCta.action.href}
             className={cn(
               buttonVariants({ size: "lg" }),
-              "mt-8 min-h-13 bg-solar text-forest-deep hover:bg-solar-soft",
+              "motion-interactive mt-8 min-h-13 bg-solar text-forest-deep hover:bg-solar-soft",
             )}
           >
             {finalCta.action.label}

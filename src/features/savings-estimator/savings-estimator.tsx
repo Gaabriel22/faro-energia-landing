@@ -131,7 +131,7 @@ export function SavingsEstimator({ disclaimer }: SavingsEstimatorProps) {
 
         <button
           type="submit"
-          className="inline-flex min-h-12 w-full items-center justify-between rounded-full bg-forest-deep px-6 text-sm font-bold text-canvas shadow-(--shadow-button) hover:bg-forest"
+          className="motion-interactive inline-flex min-h-12 w-full items-center justify-between rounded-full bg-forest-deep px-6 text-sm font-bold text-canvas shadow-(--shadow-button) hover:bg-forest"
         >
           Calcular economia
           <ArrowDownRight aria-hidden className="size-4" />
@@ -140,10 +140,11 @@ export function SavingsEstimator({ disclaimer }: SavingsEstimatorProps) {
 
       <div className="bg-forest-deep p-5 text-canvas sm:p-7">
         <div
+          key={estimate.monthlySavings}
           role="status"
           aria-label="Resultado da estimativa"
           aria-atomic="true"
-          className="grid gap-px overflow-hidden border border-canvas/18 bg-canvas/18 sm:grid-cols-2"
+          className="motion-feedback grid gap-px overflow-hidden border border-canvas/18 bg-canvas/18 sm:grid-cols-2"
         >
           <div className="bg-forest-deep p-5">
             <p className="text-[0.65rem] font-bold tracking-[0.14em] text-solar uppercase">

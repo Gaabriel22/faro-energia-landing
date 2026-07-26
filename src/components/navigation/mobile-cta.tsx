@@ -13,7 +13,7 @@ export function MobileCta() {
     >
       <a
         href={action.href}
-        className="mx-auto flex min-h-12 max-w-md items-center justify-between rounded-full bg-solar px-5 text-sm font-bold text-forest-deep"
+        className="motion-interactive mx-auto flex min-h-12 max-w-md items-center justify-between rounded-full bg-solar px-5 text-sm font-bold text-forest-deep"
       >
         {action.label}
         <ArrowUpRight aria-hidden className="size-4" />
