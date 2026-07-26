@@ -9,13 +9,13 @@
 
 ## 2. Qualidade e testes
 
-- [ ] 2.1 Configurar scripts separados para lint, typecheck, testes, Playwright e Lighthouse
-- [ ] 2.2 Configurar Vitest e Testing Library para lógica e componentes
-- [ ] 2.3 Configurar Playwright com projetos mobile e desktop, servidor de produção e falha em console error
-- [ ] 2.4 Integrar axe com gate de zero violações e criar checklist manual WCAG 2.2 AA
-- [ ] 2.5 Configurar Lighthouse CI com Performance 95, demais categorias 100, LCP 2,5 s, TBT 200 ms e CLS 0,1
-- [ ] 2.6 Criar medição CDP do JavaScript transferido e asset visual acima da dobra nos projetos definidos
-- [ ] 2.7 Criar teste Playwright sem JavaScript para conteúdo essencial
+- [x] 2.1 Configurar scripts separados para lint, typecheck, testes, Playwright e Lighthouse
+- [x] 2.2 Configurar Vitest e Testing Library para lógica e componentes
+- [x] 2.3 Configurar Playwright com projetos mobile e desktop, servidor de produção e falha em console error
+- [x] 2.4 Integrar axe com gate de zero violações e criar checklist manual WCAG 2.2 AA
+- [x] 2.5 Configurar Lighthouse CI com Performance 95, demais categorias 100, LCP 2,5 s, TBT 200 ms e CLS 0,1
+- [x] 2.6 Criar medição CDP do JavaScript transferido e asset visual acima da dobra nos projetos definidos
+- [x] 2.7 Criar teste Playwright sem JavaScript para conteúdo essencial
 
 ## 3. Marca, conteúdo e sistema visual
 
@@ -23,7 +23,7 @@
 - [ ] 3.2 Definir tokens semânticos em OKLCH, escalas tipográficas, espaçamento, raios, sombras e estados de foco
 - [ ] 3.3 Configurar fontes otimizadas com `next/font`, poucos pesos e fallbacks ajustados
 - [ ] 3.4 Criar logo, ícones e motivo geométrico do raio solar em SVG acessível e enxuto
-- [ ] 3.5 Produzir e otimizar assets visuais locais em AVIF/WebP com variantes responsivas
+- [ ] 3.5 Gerar, selecionar e otimizar assets visuais originais locais em AVIF/WebP com variantes responsivas
 - [ ] 3.6 Implementar primitivas de layout e seção reutilizáveis sem criar abstrações prematuras
 
 ## 4. Jornada de conversão
@@ -56,8 +56,8 @@
 
 ## 7. SEO e segurança
 
-- [ ] 7.1 Implementar metadata, canonical via `SITE_URL`, Open Graph, Twitter card, favicon, robots e sitemap
-- [ ] 7.2 Criar imagem social local otimizada e validar preview compartilhável
+- [ ] 7.1 Gerar e implementar favicon, metadata, canonical via `SITE_URL`, Open Graph, Twitter card, robots e sitemap
+- [ ] 7.2 Gerar imagem social original local otimizada e validar preview compartilhável
 - [ ] 7.3 Implementar JSON-LD seguro para WebSite, Organization, Service e FAQ compatível com conteúdo visível
 - [ ] 7.4 Configurar CSP, `X-Content-Type-Options`, proteção de framing, `Referrer-Policy` e `Permissions-Policy`
 - [ ] 7.5 Verificar ausência de segredos, PII em logs, HTML inseguro e origens desnecessárias

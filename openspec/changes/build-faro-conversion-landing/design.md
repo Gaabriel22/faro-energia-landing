@@ -61,7 +61,7 @@ A identidade combinará fundo marfim, verde floresta, amarelo solar e grafite. T
 
 A composição evitará gradiente roxo, cards excessivos, glassmorphism genérico e layouts de template SaaS. A assinatura memorável será um “raio solar” geométrico atravessando hero e transições de seção.
 
-Os assets principais serão locais, responsivos e servidos por `next/image`. Ícones serão SVG enxuto. Conteúdo visual decorativo terá texto alternativo vazio; imagens informativas terão alternativas específicas.
+Os assets principais serão gerados originalmente para o projeto, mantidos localmente, responsivos e servidos por `next/image`. Não haverá dependência de banco de imagens remoto. Ícones serão SVG enxuto. Conteúdo visual decorativo terá texto alternativo vazio; imagens informativas terão alternativas específicas.
 
 ### 4. Conversão sem funcionalidade artificial
 
@@ -97,7 +97,7 @@ Alternativa considerada: integração com serviço de e-mail. Foi rejeitada por 
 
 ### 7. SEO e dados estruturados coerentes
 
-A página terá metadata completa, canonical configurável, Open Graph, Twitter card, sitemap, robots, favicon e imagem social local. Haverá um único `h1`, hierarquia semântica, links descritivos e conteúdo rastreável no HTML inicial.
+A página terá metadata completa, canonical configurável, Open Graph, Twitter card, sitemap, robots, favicon e imagem social original gerados para a marca. Haverá um único `h1`, hierarquia semântica, links descritivos e conteúdo rastreável no HTML inicial.
 
 JSON-LD usará tipos compatíveis com o conteúdo visível, como `Organization`, `Service`, `WebSite` e `FAQPage`, sem inventar avaliações agregadas, endereço ou identificadores legais. Dados estruturados serão serializados com segurança e testados. O nome fictício não será misturado com entidades reais.
 
@@ -113,7 +113,7 @@ O LCP será texto ou imagem local otimizada com dimensões conhecidas. Fontes us
 
 O orçamento inicial será:
 
-- JavaScript cliente da rota principal <= 130 KB transferidos na medição CDP definida abaixo.
+- JavaScript cliente da rota principal <= 170 KB transferidos na medição CDP definida abaixo. O build vazio do Next.js 16.2.12 mediu 147.657 bytes; o limite preserva cerca de 26 KB para código interativo da aplicação.
 - Imagem responsável pelo LCP <= 180 KB.
 - Nenhuma dependência de terceiros bloqueante.
 - Zero mudanças de layout causadas por mídia, fontes ou animação.
@@ -122,12 +122,12 @@ Validação incluirá lint, typecheck, testes unitários, testes de componentes,
 
 No laboratório, Lighthouse medirá Performance, Accessibility, Best Practices, SEO, LCP, CLS e TBT. INP é métrica de campo e não será usado como gate local; permanecerá meta de produção de <= 200 ms caso uma implantação futura tenha telemetria Web Vitals suficiente. O gate reproduzível será LCP <= 2,5 s, CLS <= 0,1 e TBT <= 200 ms.
 
-O orçamento de JavaScript será medido por Playwright/Chrome DevTools Protocol em navegação limpa, cache desativado e build de produção, somando `encodedDataLength` de todos os scripts de mesma origem requisitados pela rota inicial. O limite será 130 KB transferidos. A mídia LCP, ou a maior imagem raster acima da dobra quando o LCP for texto, terá no máximo 180 KB transferidos no projeto mobile.
+O orçamento de JavaScript será medido por Playwright/Chrome DevTools Protocol em navegação limpa, cache desativado e build de produção, somando `encodedDataLength` de todos os scripts de mesma origem requisitados pela rota inicial. O limite será 170 KB transferidos. A mídia LCP, ou a maior imagem raster acima da dobra quando o LCP for texto, terá no máximo 180 KB transferidos no projeto mobile.
 
 ## Risks / Trade-offs
 
 - [Motion aumentar o bundle] -> Só instalar após comparação com CSS; usar carregamento mínimo e remover a biblioteca se o orçamento não for cumprido.
-- [Fotografia comprometer LCP] -> Gerar variantes locais, converter para AVIF/WebP, definir dimensões e auditar em mobile.
+- [Assets gerados comprometerem LCP] -> Selecionar a composição final, gerar variantes locais, converter para AVIF/WebP, definir dimensões e auditar em mobile.
 - [Página parecer template genérico] -> Sustentar direção editorial própria, composição assimétrica e assets coerentes.
 - [Conteúdo fictício ser confundido com operação real] -> Documentar claramente no README e evitar dados legais, endereços e avaliações estruturadas.
 - [Server Action demonstrativa criar falsa expectativa] -> Não persistir dados, não registrar PII e documentar comportamento.

@@ -29,6 +29,10 @@ Motion não foi instalado nesta etapa. Primeiro serão avaliadas animações CSS
 
 ## Baseline de segurança
 
-O scaffold foi criado com as versões mais recentes disponíveis em 26 de julho de 2026. A auditoria completa reportou 15 achados de ferramentas e runtime. Após classificar `shadcn` e `tw-animate-css` como dependências de desenvolvimento, `npm audit --omit=dev` reporta três vulnerabilidades altas: `next`, seu PostCSS interno e `sharp`.
+O scaffold foi criado com as versões mais recentes disponíveis em 26 de julho de 2026. Após adicionar a infraestrutura de qualidade, a auditoria completa reportou 23 achados em ferramentas e runtime. `npm audit --omit=dev` reporta três vulnerabilidades altas: `next`, seu PostCSS interno e `sharp`. Os demais achados estão em CLIs de desenvolvimento, principalmente nas árvores de LHCI, shadcn e ESLint.
 
 O npm sugere downgrade incompatível para Next.js 9.3.3, não uma correção segura, então nenhuma alteração automática foi aplicada. A auditoria será repetida na etapa de segurança e acompanhada até existir atualização compatível, sem usar `--force`.
+
+## Build reproduzível
+
+O scaffold deixou de usar `next/font/google` porque o download durante o build tornava CI e validações locais dependentes de rede. A tipografia final será adicionada como asset local otimizado na etapa de marca.
