@@ -3,7 +3,7 @@ import { Check, Clock3, ShieldCheck } from "lucide-react"
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
 import { submitLead } from "@/features/lead-form/actions"
-import { LeadForm } from "@/features/lead-form/lead-form"
+import { DeferredLeadForm } from "@/features/lead-form/deferred-lead-form"
 
 const assurances = [
   {
@@ -86,7 +86,7 @@ export function LeadFormSection() {
                 Campos com <span aria-hidden>*</span> são obrigatórios.
               </p>
             </div>
-            <LeadForm action={submitLead} />
+            <DeferredLeadForm action={submitLead} />
           </div>
         </div>
       </Container>

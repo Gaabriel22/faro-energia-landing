@@ -230,10 +230,6 @@
   }
 }
 
-.motion-hero-copy {
-  animation: faro-settle 680ms var(--motion-ease-out) 120ms both;
-}
-
 .motion-hero-image {
   animation: faro-image-settle 900ms var(--motion-ease-out) both;
 }
@@ -285,6 +281,11 @@ details[open] .motion-faq-answer {
 
 .motion-interactive:active {
   transform: scale(0.985);
+}
+
+main > [data-slot="section"]:nth-child(n + 6) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 60rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

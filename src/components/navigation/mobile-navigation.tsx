@@ -1,10 +1,3 @@
-"use client"
-
-import { useEffect, useRef, useState } from "react"
-
-import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-
 type NavigationItem = {
   href: `#${string}`
   label: string
@@ -53,42 +46,23 @@ function MenuIcon({ open }: { open: boolean }) {
 }
 
 export function MobileNavigation({ items, cta }: MobileNavigationProps) {
-  const [isOpen, setIsOpen] = useState(false)
-  const triggerRef = useRef<HTMLButtonElement>(null)
-
-  useEffect(() => {
-    if (!isOpen) return
-
-    function closeOnEscape(event: KeyboardEvent) {
-      if (event.key !== "Escape") return
-
-      setIsOpen(false)
-      triggerRef.current?.focus()
-    }
-
-    document.addEventListener("keydown", closeOnEscape)
-    return () => document.removeEventListener("keydown", closeOnEscape)
-  }, [isOpen])
-
-  function closeMenu() {
-    setIsOpen(false)
-  }
-
   return (
-    <div className="lg:hidden">
-      <button
-        ref={triggerRef}
-        type="button"
-        aria-expanded={isOpen}
-        aria-controls="mobile-navigation"
-        onClick={() => setIsOpen((current) => !current)}
-        className="motion-interactive flex min-h-11 items-center gap-2 rounded-full border border-canvas/24 px-4 text-sm font-semibold text-canvas hover:border-solar hover:text-solar"
-      >
-        <MenuIcon open={isOpen} />
-        Menu
-      </button>
+    <>
+      <details data-mobile-navigation className="group lg:hidden">
+        <summary
+          role="button"
+          aria-controls="mobile-navigation"
+          className="motion-interactive flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-full border border-canvas/24 px-4 text-sm font-semibold text-canvas hover:border-solar hover:text-solar [&::-webkit-details-marker]:hidden"
+        >
+          <span className="group-open:hidden">
+            <MenuIcon open={false} />
+          </span>
+          <span className="hidden group-open:inline-flex">
+            <MenuIcon open />
+          </span>
+          Menu
+        </summary>
 
-      {isOpen ? (
         <div
           id="mobile-navigation"
           className="motion-mobile-menu absolute inset-x-0 top-full max-h-[calc(100svh-4.75rem)] overflow-y-auto overscroll-contain border-t border-canvas/12 bg-forest-deep px-gutter pb-6 shadow-2xl"
@@ -99,7 +73,6 @@ export function MobileNavigation({ items, cta }: MobileNavigationProps) {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    onClick={closeMenu}
                     className="group flex min-h-14 items-center justify-between py-3 font-semibold text-canvas"
                   >
                     <span className="mr-5 text-xs tabular-nums text-canvas/45">
@@ -115,19 +88,16 @@ export function MobileNavigation({ items, cta }: MobileNavigationProps) {
             </ul>
             <a
               href={cta.href}
-              onClick={closeMenu}
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "motion-interactive mt-5 w-full bg-solar text-forest-deep hover:bg-solar-soft",
-              )}
+              className="motion-interactive mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-solar px-6 text-base font-semibold whitespace-nowrap text-forest-deep shadow-(--shadow-button) outline-none hover:bg-solar-soft focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40"
             >
               {cta.label}
               <NavArrowIcon />
             </a>
           </nav>
         </div>
-      ) : null}
-    </div>
+      </details>
+      <script src="/mobile-navigation.js" defer />
+    </>
   )
 }
 

@@ -31,7 +31,7 @@ export function HeroSection() {
         size="wide"
         className="relative grid min-h-svh grid-cols-1 pt-31 lg:grid-cols-12 lg:pt-19"
       >
-        <div className="motion-hero-copy relative z-20 flex flex-col justify-center pb-12 lg:col-span-7 lg:py-20 lg:pr-12 xl:col-span-6">
+        <div className="relative z-20 flex flex-col justify-center pb-12 lg:col-span-7 lg:py-20 lg:pr-12 xl:col-span-6">
           <p className="mb-5 flex items-center gap-3 text-[0.68rem] font-bold tracking-[0.2em] text-solar uppercase sm:text-xs">
             <span aria-hidden className="h-px w-9 bg-solar" />
             {hero.eyebrow}
@@ -107,7 +107,7 @@ export function HeroSection() {
               src={largestHero.webp}
               alt={heroImage.alt}
               fill
-              priority
+              fetchPriority="high"
               unoptimized
               sizes="(max-width: 1023px) 100vw, 50vw"
               className="motion-hero-image object-cover object-[58%_center] lg:object-center"

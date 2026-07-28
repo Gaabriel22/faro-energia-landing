@@ -45,16 +45,17 @@ test("offers an accessible responsive navigation", async ({
   }
 
   const trigger = page.getByRole("button", { name: "Menu" })
+  const disclosure = trigger.locator("..")
 
-  await expect(trigger).toHaveAttribute("aria-expanded", "false")
+  await expect(disclosure).not.toHaveAttribute("open", "")
   await trigger.click()
-  await expect(trigger).toHaveAttribute("aria-expanded", "true")
+  await expect(disclosure).toHaveAttribute("open", "")
   await expect(
     page.getByRole("navigation", { name: "Navegação móvel" }),
   ).toBeVisible()
 
   await page.keyboard.press("Escape")
-  await expect(trigger).toHaveAttribute("aria-expanded", "false")
+  await expect(disclosure).not.toHaveAttribute("open", "")
   await expect(trigger).toBeFocused()
 })
 

@@ -27,6 +27,7 @@ test("serves restrictive security headers without breaking hydration", async ({
   expect(headers["cross-origin-opener-policy"]).toBe("same-origin")
   expect(headers["x-powered-by"]).toBeUndefined()
 
+  await page.locator("#simulador").scrollIntoViewIfNeeded()
   await page.getByRole("button", { name: "Calcular economia" }).click()
   await expect(
     page.getByRole("status", { name: "Resultado da estimativa" }),

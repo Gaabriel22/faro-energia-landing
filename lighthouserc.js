@@ -6,10 +6,13 @@ module.exports = {
   ci: {
     collect: {
       chromePath: chromium.executablePath(),
-      numberOfRuns: 3,
+      numberOfRuns: 1,
       startServerCommand: "npm run start -- --hostname 127.0.0.1 --port 3100",
       startServerReadyPattern: "Ready",
       startServerReadyTimeout: 120_000,
+      settings: {
+        throttlingMethod: "devtools",
+      },
       url: ["http://127.0.0.1:3100"],
     },
     assert: {

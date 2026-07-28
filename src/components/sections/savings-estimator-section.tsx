@@ -3,7 +3,7 @@ import { ArrowDown } from "lucide-react"
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
 import { faroLandingContent } from "@/content"
-import { SavingsEstimator } from "@/features/savings-estimator/savings-estimator"
+import { DeferredSavingsEstimator } from "@/features/savings-estimator/deferred-savings-estimator"
 
 export function SavingsEstimatorSection() {
   const { estimator } = faroLandingContent
@@ -61,7 +61,7 @@ export function SavingsEstimatorSection() {
         </header>
 
         <div className="lg:col-span-7">
-          <SavingsEstimator disclaimer={estimator.disclaimer} />
+          <DeferredSavingsEstimator disclaimer={estimator.disclaimer} />
         </div>
       </Container>
     </Section>
